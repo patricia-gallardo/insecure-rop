@@ -55,3 +55,27 @@ Breakpoint 1, 0x0000000000400b6c in main ()
 pattern_offset -q 4130634139624138
 [*] Exact match at offset 56
 ```
+
+```
+$ ./target $(./chain.py)
+Segmentation fault (core dumped)
+```
+
+To debug try:
+
+```
+./chain.py > file
+xxd -g 8 file
+```
+
+Try to eliminate zero bytes
+```
+ROPgadget --ropchain --binary target --badbytes 00
+```
+
+Maybe try to build as a 32 bit binary?
+```
+clang -m32 -static -fno-stack-protector -o target target.c
+```
+
+And start again from the beginning - now with 32 bit. Maybe there are different bad bytes this time around? Have a look at the bytes produced in the shellcode - debug in gdb - what is going on?
