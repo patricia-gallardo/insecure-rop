@@ -78,4 +78,4 @@ Maybe try to build as a 32 bit binary?
 clang -m32 -static -fno-stack-protector -o target target.c
 ```
 
-And start again from the beginning - now with 32 bit. Maybe there are different bad bytes this time around? Have a look at the bytes produced in the shellcode - debug in gdb - what is going on?
+And start again from the beginning - now with 32 bit. Maybe there are different bad bytes this time around? Have a look at the bytes produced in the shellcode - debug in gdb - what is going on? The offset is probably different in 32 bit...
