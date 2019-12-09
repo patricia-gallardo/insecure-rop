@@ -12,8 +12,7 @@ ROPgadget --binary target
 ROPgadget --ropchain --binary target
 ```
 
-Modify chain.py
-We need to know the offset of the return pointer
+To add the right number of padding bytes we need to know the offset of the return pointer - but this we've done before
 
 ```
 $ pattern_create -l 100
